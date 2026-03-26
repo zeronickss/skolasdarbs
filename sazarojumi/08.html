@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+        }
+        #search {
+            padding: 10px;
+            width: 200px;
+            margin-bottom: 20px;
+        }
+        #book-list {
+            list-style-type: none;
+            padding: 0;
+
+        }
+        li {
+border-bottom: 1px solid #ccc;
+padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <ul id="book-list">
+        <input id="search" type="text">
+        <li style="display: list-item">pirmā grāmata</li>
+        <li style="display: list-item">otrā grāmata</li>
+        <li style="display: list-item">trešā grāmata</li>
+    </ul>
+    <script>
+        document.getElementById('search').addEventListener('keyup', function() {
+    let filter = this.value.toLowerCase();
+    let items = document.querySelectorAll('#book-list li');
+
+    items.forEach(item => {
+        let text = item.textContent.toLowerCase();
+        item.style.display = text.includes(filter) ? 'list-item' : 'none';
+    });
+});
+    </script>
+</body>
+</html>
