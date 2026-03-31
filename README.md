@@ -1,2 +1,4 @@
 # skolasdarbs
-Mājaslapa
+Mājaslapas
+
+Man patik ši lekcija ?
