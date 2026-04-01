@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistēmas lapa</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="javascript" href="script.js">
+</head>
+<body>
+
+    <div class="modal" id="regModal">
+        <div class="modal-content">
+            <span class="close-x" onclick="closePop()">X</span>
+            <h3>Izveidot kontu</h3>
+            <form action="#" method="POST" style="display:flex; flex-direction:column; gap:10px;">
+                <input type="text" placeholder="Lietotājvārds" required>
+                <input type="E-pasts" placeholder="E-pasts" required>
+                <input type="password" placeholder="Parole" required>
+                <button type="submit" style="background:#2ecc71; color:white; border:none; padding:10px; cursor:pointer;">Reģistrēties</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal" id="aboutModal">
+        <div class="modal-content">
+            <span class="close-x" onclick="closePop()">X</span>
+            <h3>Par mums</h3>
+            <p> Es esum students. Šī lapa ir izveidota kā stundas darbs, lai atgādinatu ka strādāt ar HTML un CSS Grid izkārtojumu.</p>
+        </div>
+    </div>
+
+    <div class="modal" id="contactModal">
+        <div class="modal-content">
+            <span class="close-x" onclick="closePop()">X</span>
+            <h3>Kontakti</h3>
+            <p><strong>E-pasts:</strong> students123@epasts.lv</p>
+            <p><strong>Talrunis:</strong> +371 20000000</p>
+            <p><strong>Adrese:</strong> Rīga, Latvija</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <header>
+            <nav>
+                <a onclick="location.reload()">Sākums</a>
+                <a onclick="openPop('aboutModal')">Par mums</a>
+                <a onclick="openPop('contactModal')">Kontakti</a>
+            </nav>
+        </header>
+
+        <aside>
+            <h3>Pieteikties</h3>
+            <form action="login_process.php" method="POST" class="login-form">
+                <div>
+                    <label><img src="Userimg.png" class="form-icon">Vārds:</label>
+                    <input type="text" name="name" required>
+                </div>
+                <div>
+                    <label><img src="email.jpg" class="form-icon">E-pasts:</label>
+                    <input type="email" name="email" required>
+                </div>
+                <div>
+                    <label><img src="key.png" class="form-icon">Parole:</label>
+                    <input type="password" name="password" required>
+                </div>
+                <button type="submit" class="login-button">Ienākt</button>
+            </form>
+
+            <button class="reg-sidebar-btn" onclick="openPop('regModal')">Reģistrēties</button>
+        </aside>
+
+        <main>
+            <h2>Sveicināti!</h2>
+            <p>Šī ir galvenā darba zona (Main). Spied uz izvēlnes augšā, lai redzētu pop-up logus.</p>
+        </main>
+
+        <footer>
+            <p style="text-align: center; line-height: 100px; margin: 0;">Danils,Niks un Regnars (kopīgais darbs)</p>
+        </footer>
+    </div>
+</body>
+</html>
